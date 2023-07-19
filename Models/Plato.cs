@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _20230713.Models
 {
-    class Plato : INotifyPropertyChanged
+    public class Plato : INotifyPropertyChanged
     {
         private int _id;
         public int id { get { return _id; } set { if (_id == value) return; _id = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(id))); } }

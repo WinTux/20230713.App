@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _20230713.ConexionDatos
 {
-    interface IRestConexionDatos
+    public interface IRestConexionDatos
     {
         Task<List<Plato>> GetPaltosAsync();
         Task AddPlatoAsync(Plato plato);
