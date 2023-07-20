@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_20230713.Paginas.GestionPlatosPage"
              Title="Gestión de platos">
-    <ContentPage.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="0,5,0,5"/>
-        </Style>
-    </ContentPage.Resources>
-    <VerticalStackLayout Margin="20">
-        <Label Text="Acciones a realizar"/>
-        <Entry Text="{Binding Path=plato.nombre}" Placeholder="Introduzca nombre de plato"/>
-        <Button Text="Gardar" Clicked="OnGuardarClic"/>
-        <Button Text="Eliminar" Clicked="OnEliminarClic"/>
-        <Button Text="Cancelar" Clicked="OnCancelClic"/>
-    </VerticalStackLayout>
+    <Grid RowDefinitions="*, Auto" ColumnDefinitions="*,*,*" ColumnSpacing="5">
+        <TableView Intent="Data" Grid.Row="0" Grid.ColumnSpan="3">
+            <TableRoot>
+                <TableSection Title="Tareas a realizar">
+                    <EntryCell Text="{Binding Path=plato.nombre}" Placeholder="Introduzca nombre de plato"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <Button Text="Guardar" Clicked="OnGuardarClic" Grid.Row="1" Grid.Column="0" Margin="20,5"/>
+        <Button Text="Eliminar" Clicked="OnEliminarClic" Grid.Row="1" Grid.Column="1" Margin="0,5"/>
+        <Button Text="Cancelar" Clicked="OnCancelClic" Grid.Row="1" Grid.Column="2" Margin="20,5"/>
+    </Grid>
 </ContentPage>
