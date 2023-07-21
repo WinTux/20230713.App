@@ -15,9 +15,10 @@ namespace _20230713.ConexionDatos
         public readonly string dominio;
         public readonly string url;
         public readonly JsonSerializerOptions opcionesJson;
-        public RestConexionDatos()
+        public RestConexionDatos(HttpClient httpClient)
         {
-            httpClient = new HttpClient();
+            //httpClient = new HttpClient();
+            this.httpClient = httpClient;
             dominio = DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5145" : "http://localhost:5145";
             url = $"{dominio}/api";
             opcionesJson = new JsonSerializerOptions { 
